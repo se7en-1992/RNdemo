@@ -34,8 +34,8 @@ export default class HomeScreen extends React.Component {
         <Greeting name='5se7en' />
         <Blink text='Can you see me?' />
         <Button
-            onPress={() => this.props.navigation.navigate('Detail')}
-            title='Go to Detail'/>
+            onPress={() => this.props.navigation.navigate('Flex')}
+            title='Go to Flex'/>
       </View>
     );
   }

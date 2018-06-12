@@ -5,15 +5,19 @@
  */
 import { StackNavigator } from 'react-navigation';
 import HomeScreen from './src/pages/HomeScreen';
-import DetailScreen from './src/pages/DetailScreen';
+import FlexScreen from './src/pages/FlexScreen';
+import FlexBoxScreen from './src/pages/FlexBoxScreen';
 
 
 const App = StackNavigator({
   Home: {
     screen: HomeScreen
   },
-  Detail: {
-    screen: DetailScreen
+  Flex: {
+    screen: FlexScreen
+  },
+  FlexBox: {
+    screen: FlexBoxScreen
   }
 });
 
