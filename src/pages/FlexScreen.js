@@ -5,7 +5,7 @@ import { View, Button } from 'react-native';
 import Fixed from './../components/width/fixed';
 import Flex from './../components/width/flex';
 
-export default class DetailScreen extends React.Component {
+export default class FlexScreen extends React.Component {
   static navigationOptions = {
     title: '宽度和高度',
   };

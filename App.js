@@ -7,6 +7,8 @@ import { StackNavigator } from 'react-navigation';
 import HomeScreen from './src/pages/HomeScreen';
 import FlexScreen from './src/pages/FlexScreen';
 import FlexBoxScreen from './src/pages/FlexBoxScreen';
+import TextInputScreen from './src/pages/TextInputScreen';
+import ScrollViewScreen from './src/pages/ScrollViewScreen';
 
 
 const App = StackNavigator({
@@ -18,6 +20,13 @@ const App = StackNavigator({
   },
   FlexBox: {
     screen: FlexBoxScreen
+  },
+  TextInput: {
+    screen: TextInputScreen
+  }
+  ,
+  ScrollView: {
+    screen: ScrollViewScreen
   }
 });
 
