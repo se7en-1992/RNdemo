@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import HomeScreen from './src/pages/HomeScreen';
 import FlexScreen from './src/pages/FlexScreen';
 import FlexBoxScreen from './src/pages/FlexBoxScreen';
@@ -12,7 +12,7 @@ import ScrollViewScreen from './src/pages/ScrollViewScreen';
 import LongListScreen from './src/pages/LongListScreen';
 
 
-const App = StackNavigator({
+const App = createStackNavigator({
   Home: {
     screen: HomeScreen
   },

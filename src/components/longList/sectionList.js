@@ -1,16 +1,35 @@
 import React, { Component } from 'react';
 import { SectionList, StyleSheet, Text, View } from 'react-native';
+import { latestLists } from './../../service/getData';
 
 export default class SectionListBasics extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+    };
+  }
+  async componentDidMount(){
+    try {
+      const latestDate = await latestLists()
+      let list = [
+        {title: 'nid1', data:latestDate['nid1']},
+        {title: 'nid2', data:latestDate['nid2']},
+      ]
+       console.log(list)
+      this.setState({
+        data: list,     
+      });
+    } catch(error) {
+      console.error(error)
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
         <SectionList
-          sections={[
-            {title: 'D', data: ['Devin']},
-            {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
-          ]}
-          renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
+          sections={this.state.data}
+          renderItem={({item}) => <Text style={styles.item}>{item.title.substring(0,18)}</Text>}
           renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
         />
       </View>

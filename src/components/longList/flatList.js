@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { announceLists } from './../../service/getData';
 
 export default class FlatListBasics extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null,
+    };
+  }
+  async componentDidMount(){
+    try {
+      const announceDate = await announceLists()
+      console.log(announceDate)
+      this.setState({
+        data: announceDate.articleList,     
+      });
+    } catch(error) {
+      console.error(error)
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
         <FlatList
-          data={[
-            {key: 'Devin'},
-            {key: 'Jackson'},
-            {key: 'James'},
-            {key: 'Joel'},
-            {key: 'John'},
-            {key: 'Jillian'},
-            {key: 'Jimmy'},
-            {key: 'Julie'},
-            {key: '123'},
-            {key: '456'},
-            {key: '789'},
-            {key: '741'},
-            {key: '852'},
-            {key: '963'},
-            {key: '753'},
-            {key: '951'},
-          ]}
-          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+          data={this.state.data}
+          renderItem={({item}) => <Text style={styles.item}>{item.title.substring(0,18)}</Text>}
         />
       </View>
     );

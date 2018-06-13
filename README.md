@@ -10,6 +10,10 @@
         Print: Entry, ":CFBundleIdentifier", Does Not Exist
         ...
     ```    
+2. 关于react-navigation的问题
+    - `react-navigation`在使用`StackNavigator`方法进行创建新的screen运行是正常的但是在调试的时候就会有警告：用`createStackNavigator`方法代替`StackNavigator`方法。
+3. 关于长列表FlatList或是SectionList的问题
+    - 长列表在渲染数组的时候,里面必须要有个key,不然就会出现没有key的黄色警告
 
 ## 学习建议
 
