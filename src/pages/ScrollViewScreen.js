@@ -14,8 +14,8 @@ export default class ScrollViewScreen extends React.Component {
       <View style={{flex: 1}}>
         <ScrollView />
         <Button
-            onPress={() => this.props.navigation.navigate('TextInput')}
-            title='Go to TextInput'/>
+            onPress={() => this.props.navigation.navigate('LongList')}
+            title='Go to LongList'/>
       </View>
     );
   }

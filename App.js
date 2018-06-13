@@ -9,6 +9,7 @@ import FlexScreen from './src/pages/FlexScreen';
 import FlexBoxScreen from './src/pages/FlexBoxScreen';
 import TextInputScreen from './src/pages/TextInputScreen';
 import ScrollViewScreen from './src/pages/ScrollViewScreen';
+import LongListScreen from './src/pages/LongListScreen';
 
 
 const App = StackNavigator({
@@ -23,10 +24,12 @@ const App = StackNavigator({
   },
   TextInput: {
     screen: TextInputScreen
-  }
-  ,
+  },
   ScrollView: {
     screen: ScrollViewScreen
+  },
+  LongList: {
+    screen: LongListScreen
   }
 });
 
